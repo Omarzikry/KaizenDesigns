@@ -1,0 +1,17 @@
+{
+  "name": "Plate",
+  "description": "description",
+  "price": 3200,
+  "gallery": [
+    {
+      "img": "https://sss.com/ska.jpg",
+      "alt": "Image of the plate"
+    },
+    {
+      "img": "https://sss.com/ska.jpg",
+      "alt": "Image of the plate"
+    }
+  ],
+  "material": "wood",
+  "tags": ["ceramic", "simple"]
+}
