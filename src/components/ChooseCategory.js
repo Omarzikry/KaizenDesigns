@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import personalizedImg from "../assets/imgs/personalized.svg";
 import canChooseImg from "../assets/imgs/choose-yourself.svg";
+import { useHistory } from "react-router";
 
 const SChooseCategory = styled.div`
   width: 100%;
@@ -36,15 +37,17 @@ const SSelect = styled.div`
   }
 `;
 const ChooseCategory = () => {
+  const history = useHistory();
+
   return (
     <SChooseCategory>
       <h1>Would you like personalized experience? 😉</h1>
       <SSelectGrid>
-        <SSelect>
+        <SSelect onClick={() => history.push("/products")}>
           <h2>I can choose myself 🤓</h2>
           <img src={canChooseImg} alt="personalize your ceramic" />
         </SSelect>
-        <SSelect>
+        <SSelect onClick={() => history.push("/personalize")}>
           <h2>Personalized</h2>
           <img src={personalizedImg} alt="personalize your ceramic" />
         </SSelect>
