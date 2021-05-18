@@ -49,15 +49,6 @@ const FilterProducts = () => {
           <img src={img2} alt="" />
         </TinderCard>
       </SCardContainer>
-      <SCardContainer>
-        <TinderCard
-          className="card"
-          onSwipe={onSwipe}
-          onCardLeftScreen={() => onCardLeftScreen("img3")}
-        >
-          <img src={img2} alt="" />
-        </TinderCard>
-      </SCardContainer>
     </SFilterProducts>
   );
 };
