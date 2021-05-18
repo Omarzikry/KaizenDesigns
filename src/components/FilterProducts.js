@@ -7,8 +7,10 @@ const SFilterProducts = styled.div`
   height: 100vh;
   position: relative;
   .card {
+    width: 90vw;
+    max-width: 500px;
     img {
-      width: 90%;
+      width: 90vw;
       max-width: 500px;
     }
   }
