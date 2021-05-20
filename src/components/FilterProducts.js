@@ -1,7 +1,8 @@
 import TinderCard from "react-tinder-card";
-import img1 from "../assets/imgs/products1.jpeg";
-import img2 from "../assets/imgs/matcha-and-juicer.jpeg";
 import styled from "styled-components";
+import { selectFilters } from "./productsSlice";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 const SFilterProducts = styled.div`
   height: 100vh;
@@ -24,33 +25,27 @@ const SCardContainer = styled.div`
 `;
 
 const FilterProducts = () => {
+  const [direction, setDirection] = useState();
   const onSwipe = (direction) => {
-    console.log("You swiped: " + direction);
+    // console.log("You swiped: " + direction);
+    setDirection(direction);
   };
 
-  const onCardLeftScreen = (myIdentifier) => {
-    console.log(myIdentifier + " left the screen");
-  };
+  console.log(direction);
+
+  const filters = useSelector(selectFilters);
   return (
     <SFilterProducts>
-      <SCardContainer>
-        <TinderCard
-          className="card"
-          onSwipe={onSwipe}
-          onCardLeftScreen={() => onCardLeftScreen("img1")}
-        >
-          <img src={img1} alt="" />
-        </TinderCard>
-      </SCardContainer>
-      <SCardContainer>
-        <TinderCard
-          className="card"
-          onSwipe={onSwipe}
-          onCardLeftScreen={() => onCardLeftScreen("img2")}
-        >
-          <img src={img2} alt="" />
-        </TinderCard>
-      </SCardContainer>
+      {filters.map((filter) => (
+        <SCardContainer key={filter.id}>
+          <TinderCard
+            className="card"
+            onSwipe={(dir) => onSwipe(dir, filter.tags)}
+          >
+            <img src={filter.img} alt="" />
+          </TinderCard>
+        </SCardContainer>
+      ))}
     </SFilterProducts>
   );
 };
