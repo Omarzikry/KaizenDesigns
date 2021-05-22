@@ -12,11 +12,11 @@ export const productsSlice = createSlice({
         price: 3200,
         gallery: [
           {
-            img: "~/assets/imgs/Hemmon_Vase_960x.jpeg",
+            img: "../assets/imgs/Hemmon_Vase_960x.jpeg",
             alt: "Image of the vase",
           },
           {
-            img: "~/assets/imgs/hemmon_Land_2560x.jpeg",
+            img: "../assets/imgs/hemmon_Land_2560x.jpeg",
             alt: "Image of the vase",
           },
         ],
@@ -32,17 +32,17 @@ export const productsSlice = createSlice({
         price: 4555,
         gallery: [
           {
-            img: "~/assets/imgs/Metallic_PourOver_960x.jpeg",
+            img: "../assets/imgs/Metallic_PourOver_960x.jpeg",
             alt: "Image of the vase",
           },
           {
-            img: "~/assets/imgs/Pourover_Landscape_2560x.jpeg",
+            img: "../assets/imgs/Pourover_Landscape_2560x.jpeg",
             alt: "Image of the vase",
           },
         ],
         material: "ceramic",
         tags: ["ceramic", "cup", "minimalist"],
-        crossProductImage: "~/assets/imgs/products1.jpeg",
+        crossProductImage: "../assets/imgs/products1.jpeg",
         hasCrossProduct: true,
         crossProductPosition: {
           left: "20px",
@@ -58,13 +58,13 @@ export const productsSlice = createSlice({
         price: 4555,
         gallery: [
           {
-            img: "~/assets/imgs/Stoneware-white_960x.jpeg",
+            img: "../assets/imgs/Stoneware-white_960x.jpeg",
             alt: "Image of the vase",
           },
         ],
         material: "ceramic",
         tags: ["ceramic", "candle", "minimalist"],
-        crossProductImage: "~/assets/imgs/products1.jpeg",
+        crossProductImage: "../assets/imgs/products1.jpeg",
         hasCrossProduct: true,
         crossProductPosition: {
           left: "30px",
@@ -80,13 +80,13 @@ export const productsSlice = createSlice({
         price: 4555,
         gallery: [
           {
-            img: "~/assets/imgs/Matcha_Bowl_960x.jpeg",
+            img: "../assets/imgs/Matcha_Bowl_960x.jpeg",
             alt: "Image of the vase",
           },
         ],
         material: "ceramic",
         tags: ["ceramic", "bowl", "minimalist", "brown"],
-        crossProductImage: "~/assets/imgs/matcha-and-juicer.jpeg",
+        crossProductImage: "../assets/imgs/matcha-and-juicer.jpeg",
         hasCrossProduct: true,
         crossProductPosition: {
           left: "30px",
@@ -102,13 +102,13 @@ export const productsSlice = createSlice({
         price: 4555,
         gallery: [
           {
-            img: "~/assets/imgs/juicer_960x.jpeg",
+            img: "../assets/imgs/juicer_960x.jpeg",
             alt: "Image of the vase",
           },
         ],
         material: "ceramic",
         tags: ["ceramic", "juicer", "minimalist", "grey", "juiceLover"],
-        crossProductImage: "~/assets/imgs/matcha-and-juicer.jpeg",
+        crossProductImage: "../assets/imgs/matcha-and-juicer.jpeg",
         hasCrossProduct: true,
         crossProductPosition: {
           left: "30px",
@@ -124,7 +124,7 @@ export const productsSlice = createSlice({
         price: 4555,
         gallery: [
           {
-            img: "~/assets/imgs/Chips_Mug_White_Speckled_960x.jpeg",
+            img: "../assets/imgs/Chips_Mug_White_Speckled_960x.jpeg",
             alt: "Image of the vase",
           },
         ],

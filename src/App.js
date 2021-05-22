@@ -3,6 +3,7 @@ import HomePage from "./routes/home";
 import { Switch, Route } from "react-router-dom";
 import ProductsPage from "./routes/products";
 import FilterProductsPage from "./routes/filterProducts";
+import ProductPage from "./routes/product";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
       </Route>
       <Route path="/products">
         <ProductsPage />
+      </Route>
+      <Route path="/product/:id">
+        <ProductPage />
       </Route>
       <Route path="/">
         <HomePage />
