@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { selectFilters } from "./productsSlice";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import arrowLeft from "../assets/imgs/arrow-left.svg";
 
 const SFilterProducts = styled.div`
   height: 100vh;
@@ -24,6 +25,8 @@ const SCardContainer = styled.div`
   transform: translate(-50%, -50%);
 `;
 
+const SLeft = styled.div``;
+
 const FilterProducts = () => {
   const [direction, setDirection] = useState();
   const onSwipe = (direction) => {
@@ -36,6 +39,13 @@ const FilterProducts = () => {
   const filters = useSelector(selectFilters);
   return (
     <SFilterProducts>
+      <SLeft>
+        <div>
+          <h2>Swip Left</h2>
+          <p>You don't like the product</p>
+        </div>
+        <img src={arrowLeft} alt="" />
+      </SLeft>
       {filters.map((filter) => (
         <SCardContainer key={filter.id}>
           <TinderCard

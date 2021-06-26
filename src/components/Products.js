@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import formatMoney from "../utils/formatMoney";
 import { selectProducts } from "./productsSlice";
 
 const SProductsGrid = styled.div`
@@ -55,7 +56,7 @@ const Products = () => {
             <SProductCard>
               <img src={product.gallery[0].img} alt={product.name} />
               <h3>{product.name}</h3>
-              <p>{product.price}</p>
+              <p>{formatMoney(product.price)}</p>
             </SProductCard>
           </Link>
         ))}
