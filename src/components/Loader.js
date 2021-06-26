@@ -1,44 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-const pathTriangle = keyframes`
-
-    33% {
-        stroke-dashoffset: 74;
-    }
-    66% {
-        stroke-dashoffset: 147;
-    }
-    100% {
-        stroke-dashoffset: 221;
-    }
-
-`;
-
-const dotRect = keyframes`
-    33% {
-        transform: translate(0, 0);
-    }
-    66% {
-        transform: translate(10px, -18px);
-    }
-    100% {
-        transform: translate(-10px, -18px);
-    }
-`;
-
-const dotTriangle = keyframes`
-
-    33% {
-        transform: translate(0, 0);
-    }
-    66% {
-        transform: translate(10px, -18px);
-    }
-    100% {
-        transform: translate(-10px, -18px);
-    }
-`;
-
 const loaderSpin = keyframes`
     0% {
     transform: rotate(0deg);

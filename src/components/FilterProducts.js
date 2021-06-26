@@ -112,6 +112,7 @@ const FilterProducts = () => {
     }
     console.log(slidesCount, filters.length);
     console.log(slidesFinished);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [direction + slides]);
 
   const calculateResults = () => {
