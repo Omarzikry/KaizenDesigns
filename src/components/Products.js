@@ -20,7 +20,7 @@ const SProducts = styled.div`
   width: 90%;
   max-width: 1500px;
   margin: 0 auto;
-  padding: 5rem 1rem;
+  padding: 5rem 2.5%;
   @media (max-width: 768px) {
     width: 95%;
   }

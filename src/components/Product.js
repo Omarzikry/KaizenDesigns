@@ -9,6 +9,10 @@ const SProductGrid = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
   position: relative;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding-bottom: 60px;
+  }
 `;
 
 const SProductsImagesGrid = styled.div`
@@ -16,12 +20,22 @@ const SProductsImagesGrid = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 1rem;
+  @media (max-width: 768px) {
+    order: 2;
+  }
 `;
 
 const SProductsInfo = styled.div`
   position: sticky;
   top: 10px;
-  height: 100px;
+  height: 200px;
+  padding: 1rem;
+  @media (max-width: 768px) {
+    position: static;
+    height: auto;
+    order: 1;
+  }
 `;
 
 const SButton = styled.button`
@@ -37,6 +51,13 @@ const SButton = styled.button`
     background-color: transparent;
     color: #000;
   }
+  @media (max-width: 768px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+  }
 `;
 
 const SPrice = styled.h3`
@@ -47,10 +68,41 @@ const SPrice = styled.h3`
 const SProductCard = styled.div`
   width: 50vw;
   position: relative;
+  padding-bottom: 0.5rem;
   img {
     width: 100%;
   }
+  @media (max-width: 768px) {
+    width: 90vw;
+  }
 `;
+
+// const SMobileButtonContainer = styled.div`
+//   position: fixed;
+//   z-index: 99;
+//   left: 0;
+//   bottom: 0;
+//   height: 60px;
+//   background-color: white;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   border-top: 1px solid black;
+//   @media (min-width: 769px) {
+//     display: none;
+//   }
+// `;
+// const SMobileButton = styled.div`
+//   background-color: #000;
+//   border-color: #000;
+//   padding: 0.3rem 1rem;
+//   color: white;
+//   font-weight: 700;
+//   font-size: 1.5rem;
+//   cursor: pointer;
+//   transition: all 0.4s ease;
+// `;
 
 const fadeOut = keyframes`
 0%{
@@ -135,6 +187,9 @@ const Product = (props) => {
         <SPrice>{formatMoney(product.price)}</SPrice>
         <SButton>Buy Now</SButton>
       </SProductsInfo>
+      {/* <SMobileButtonContainer>
+        <SMobileButton>Buy Now</SMobileButton>
+      </SMobileButtonContainer> */}
     </SProductGrid>
   );
 };
