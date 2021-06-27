@@ -141,7 +141,7 @@ const FilterProducts = () => {
 
   return (
     <SFilterProducts>
-      <h1>Swip</h1>
+      <h1>Swipe</h1>
       <SLeft>
         <img src={arrowLeft} alt="" />
         <div>
