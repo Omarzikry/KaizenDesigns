@@ -9,7 +9,7 @@ const loaderSpin = keyframes`
   }`;
 
 const SLoader = styled.div`
-  background: #1b2832;
+  background: black;
   position: absolute;
   overflow: hidden;
   height: 100vh;
@@ -17,19 +17,26 @@ const SLoader = styled.div`
   left: 0;
   top: 0;
   z-index: 144;
+  p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -300%);
+    color: #fff;
+  }
   .loader {
     position: absolute;
     margin: -18px 0 0 -18px;
-    border: 3.6px solid #ff974d;
+    border: 3.6px solid #fff;
     box-sizing: border-box;
     overflow: hidden;
-    width: 36px;
-    height: 36px;
+    width: 50px;
+    height: 50px;
     left: 50%;
     top: 50%;
     animation: ${loaderSpin} 2s linear infinite reverse;
     filter: url(#goo);
-    box-shadow: 0 0 0 1px #ff974d inset;
+    box-shadow: 0 0 0 1px #fff inset;
   }
   .loader:before {
     content: "";
@@ -37,7 +44,7 @@ const SLoader = styled.div`
     -webkit-animation: ${loaderSpin} 2s cubic-bezier(0.59, 0.25, 0.4, 0.69)
       infinite;
     animation: ${loaderSpin} 2s cubic-bezier(0.59, 0.25, 0.4, 0.69) infinite;
-    background: #ff974d;
+    background: #fff;
     transform-origin: top center;
     border-radius: 50%;
     width: 150%;
@@ -50,6 +57,7 @@ const SLoader = styled.div`
 const Loader = () => {
   return (
     <SLoader>
+      <p>Please wait we are calculating the best products for you...</p>
       <div class="loader">
         <svg>
           <defs>

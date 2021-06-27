@@ -95,37 +95,50 @@ const FilterProducts = () => {
   const [slidesCount, setSlidesCount] = useState(0);
   const [slidesFinished, setSlidesFinished] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [searchParamsArray, setSearchParamsArray] = useState([]);
+  const [tags, setTags] = useState([]);
   const history = useHistory();
-  let slides = 0;
+  let slides = -1;
 
-  const onSwipe = (direction) => {
-    // console.log("You swiped: " + direction);
+  const onSwipe = (direction, tags) => {
+    console.log("You swiped: " + tags);
     setDirection(direction);
+    setTags(tags);
     slides++;
     setSlidesCount(slides + 1);
   };
+  const filters = useSelector(selectFilters);
 
   useEffect(() => {
     if (slidesCount === filters.length) {
       setSlidesFinished(true);
       calculateResults();
     }
+    calculateFavoriteTag(direction, tags);
     console.log(slidesCount, filters.length);
     console.log(slidesFinished);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [direction + slides]);
+  }, [slidesCount, slidesFinished]);
+
+  const calculateFavoriteTag = (direction, tags) => {
+    if (direction === "right") {
+      const array = [...searchParamsArray, ...tags];
+      setSearchParamsArray([...new Set(array)]);
+    }
+  };
 
   const calculateResults = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      history.push("/products");
-    }, 3000);
+      const searchParams = searchParamsArray.join("-");
+      history.push(`/products?tags=${searchParams}`);
+    }, 5000);
   };
   console.log(direction);
   console.log(slidesFinished);
+  console.log(searchParamsArray);
 
-  const filters = useSelector(selectFilters);
   return (
     <SFilterProducts>
       <h1>Swip</h1>

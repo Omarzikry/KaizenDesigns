@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import formatMoney from "../utils/formatMoney";
 import { selectProducts } from "./productsSlice";
@@ -47,19 +48,57 @@ const SProductCard = styled.div`
 
 const Products = () => {
   const products = useSelector(selectProducts);
+  const history = useHistory();
+  const [filteredProducts, setFilteredProducts] = useState();
+  const [filters, setFilters] = useState();
+
+  useEffect(() => {
+    setFilters(history.location.search.split("=").slice(1));
+  }, []);
+
+  useEffect(() => {
+    const tagsFiltersArray = history.location.search.split("=").slice(1);
+    let filteredArray = products.map((product) => {
+      let inTags;
+      // eslint-disable-next-line array-callback-return
+      product.tags.map((tag) => {
+        if (tagsFiltersArray.indexOf(tag) > -1) {
+          inTags = product;
+        }
+      });
+      return inTags;
+    });
+    const dryArray = filteredArray.filter((item) => item !== undefined);
+    setFilteredProducts(dryArray);
+  }, []);
+  console.log(filteredProducts);
   return (
     <SProducts>
       <h1>Products</h1>
+      {/* {filters.map((filter) => (
+        <p>{filter}</p>
+      ))} */}
       <SProductsGrid>
-        {products.map((product) => (
-          <Link to={`/product/${product.id}`}>
-            <SProductCard>
-              <img src={product.gallery[0].img} alt={product.name} />
-              <h3>{product.name}</h3>
-              <p>{formatMoney(product.price)}</p>
-            </SProductCard>
-          </Link>
-        ))}
+        {!!filteredProducts?.length &&
+          filteredProducts.map((product) => (
+            <Link to={`/product/${product.id}`}>
+              <SProductCard>
+                <img src={product.gallery[0].img} alt={product.name} />
+                <h3>{product.name}</h3>
+                <p>{formatMoney(product.price)}</p>
+              </SProductCard>
+            </Link>
+          ))}
+        {!filteredProducts?.length &&
+          products.map((product) => (
+            <Link to={`/product/${product.id}`}>
+              <SProductCard>
+                <img src={product.gallery[0].img} alt={product.name} />
+                <h3>{product.name}</h3>
+                <p>{formatMoney(product.price)}</p>
+              </SProductCard>
+            </Link>
+          ))}
       </SProductsGrid>
     </SProducts>
   );

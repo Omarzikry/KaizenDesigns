@@ -30,8 +30,14 @@ const SProductsInfo = styled.div`
   position: sticky;
   top: 10px;
   height: 200px;
-  padding: 1rem;
+  padding: 1rem 3rem;
+  h1,
+  p {
+    line-height: 1.5em;
+    padding-bottom: 0.4em;
+  }
   @media (max-width: 768px) {
+    padding: 1rem;
     position: static;
     height: auto;
     order: 1;
@@ -47,9 +53,11 @@ const SButton = styled.button`
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.4s ease;
+  margin-top: 1rem;
   &:hover {
     background-color: transparent;
     color: #000;
+    margin-top: 0;
   }
   @media (max-width: 768px) {
     position: fixed;
