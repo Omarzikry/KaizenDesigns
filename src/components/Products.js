@@ -50,10 +50,12 @@ const Products = () => {
   const products = useSelector(selectProducts);
   const history = useHistory();
   const [filteredProducts, setFilteredProducts] = useState();
+  // eslint-disable-next-line no-unused-vars
   const [filters, setFilters] = useState();
 
   useEffect(() => {
     setFilters(history.location.search.split("=").slice(1));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -70,6 +72,7 @@ const Products = () => {
     });
     const dryArray = filteredArray.filter((item) => item !== undefined);
     setFilteredProducts(dryArray);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   console.log(filteredProducts);
   return (
