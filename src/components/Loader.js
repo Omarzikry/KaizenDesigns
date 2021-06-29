@@ -9,7 +9,7 @@ const loaderSpin = keyframes`
   }`;
 
 const SLoader = styled.div`
-  background: black;
+  background: #2a2b2a;
   position: absolute;
   overflow: hidden;
   height: 100vh;

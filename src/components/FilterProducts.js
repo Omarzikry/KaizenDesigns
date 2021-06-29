@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { selectFilters } from "./productsSlice";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import arrowLeft from "../assets/imgs/arrow-left.svg";
-import arrowRight from "../assets/imgs/arrow-right.svg";
+import arrowLeft from "../assets/imgs/heart-broken-solid.svg";
+import arrowRight from "../assets/imgs/heart-solid.svg";
 import Loader from "./Loader";
 import { useHistory } from "react-router-dom";
 
@@ -55,6 +55,7 @@ const SLeft = styled.div`
   pointer-events: none;
   text-align: right;
   z-index: 2;
+  mix-blend-mode: color-dodge;
   p {
     font-size: 4rem;
   }
@@ -68,7 +69,7 @@ const SLeft = styled.div`
       font-size: 2rem;
     }
     img {
-      width: 40px;
+      width: 60px;
     }
   }
 `;
@@ -83,6 +84,7 @@ const SRight = styled.div`
   height: 100%;
   pointer-events: none;
   z-index: 2;
+  mix-blend-mode: color-dodge;
   p {
     font-size: 4rem;
   }
@@ -95,7 +97,7 @@ const SRight = styled.div`
       font-size: 2rem;
     }
     img {
-      width: 40px;
+      width: 60px;
     }
   }
 `;
@@ -111,7 +113,7 @@ const FilterProducts = () => {
   let slides = -1;
 
   const onSwipe = (direction, tags) => {
-    console.log("You swiped: " + tags);
+    console.log("You swiped: " + direction);
     setDirection(direction);
     setTags(tags);
     slides++;
@@ -154,9 +156,6 @@ const FilterProducts = () => {
       <h1>Swipe</h1>
       <SLeft>
         <img src={arrowLeft} alt="" />
-        <div>
-          <p>🛑</p>
-        </div>
       </SLeft>
       {filters.map((filter) => (
         <SCardContainer key={filter.id}>
@@ -169,9 +168,6 @@ const FilterProducts = () => {
         </SCardContainer>
       ))}
       <SRight>
-        <div>
-          <p>😍</p>
-        </div>
         <img src={arrowRight} alt="" />
       </SRight>
       {isLoading && <Loader />}

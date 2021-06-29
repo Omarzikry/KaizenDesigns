@@ -45,8 +45,8 @@ const SProductsInfo = styled.div`
 `;
 
 const SButton = styled.button`
-  background-color: #000;
-  border-color: #000;
+  background-color: #2a2b2a;
+  border-color: #2a2b2a;
   padding: 0.3rem 1rem;
   color: white;
   font-weight: 700;
@@ -56,7 +56,7 @@ const SButton = styled.button`
   margin-top: 1rem;
   &:hover {
     background-color: transparent;
-    color: #000;
+    color: #2a2b2a;
     margin-top: 0;
   }
   @media (max-width: 768px) {
@@ -96,14 +96,14 @@ const SProductCard = styled.div`
 //   justify-content: center;
 //   align-items: center;
 //   width: 100%;
-//   border-top: 1px solid black;
+//   border-top: 1px solid #2A2B2A;
 //   @media (min-width: 769px) {
 //     display: none;
 //   }
 // `;
 // const SMobileButton = styled.div`
-//   background-color: #000;
-//   border-color: #000;
+//   background-color: #2A2B2A;
+//   border-color: #2A2B2A;
 //   padding: 0.3rem 1rem;
 //   color: white;
 //   font-weight: 700;
