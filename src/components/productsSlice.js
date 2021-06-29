@@ -55,6 +55,30 @@ export const productsSlice = createSlice({
         crossProductId: 3,
       },
       {
+        id: 8,
+        name: "Mountain Hut Knife",
+        description:
+          "This specially crafted knife was made by 62 year old, Yoshifumi Otsuka, a third generation blacksmith in Chizu Town, Tottori Prefecture. Made from Japanese iron sand, a valuable and sought-after material, and a cherry tree handle. Only a limited number of professionals nationwide are capable of this type of hand forging.",
+        price: 29000,
+        gallery: [
+          {
+            img: "../assets/imgs/Mountainhut1_960x.jpeg",
+            alt: "Knife",
+          },
+          {
+            img: "../assets/imgs/Mountainhut2_960x.jpeg",
+            alt: "Knife",
+          },
+          {
+            img: "../assets/imgs/Mountainhut3_960x.jpeg",
+            alt: "Knife",
+          },
+        ],
+        material: "wood",
+        tags: ["wood", "knife"],
+        hasCrossProduct: false,
+      },
+      {
         id: 3,
         name: "Stoneware Candle – White",
         description:
@@ -85,7 +109,7 @@ export const productsSlice = createSlice({
         name: "Matcha",
         description:
           "Made in Japan, this bowl is the perfect shape for whisking your matcha. Featuring a brown, natural glaze and a deep design, it's a practical and classic bowl to add to your kitchen.",
-        price: 4555,
+        price: 6722,
         gallery: [
           {
             img: "../assets/imgs/Matcha_Bowl_960x.jpeg",
@@ -137,7 +161,7 @@ export const productsSlice = createSlice({
         name: "Chips Stacking Mug – Speckled White",
         description:
           "This mug was made for both function and appeal. Designed to be stackable and easy to hold, it was made in the Mino Province by CHIPS, who produce tableware to blend into everyday life.",
-        price: 4555,
+        price: 5750,
         gallery: [
           {
             img: "../assets/imgs/Chips_Mug_White_Speckled_960x.jpeg",
@@ -146,6 +170,66 @@ export const productsSlice = createSlice({
         ],
         material: "ceramic",
         tags: ["ceramic", "cup", "minimalist", "colorfull", "juiceLover"],
+        hasCrossProduct: false,
+      },
+      {
+        id: 7,
+        name: "Medium Universal Knife – Wild Cherry Wood",
+        description:
+          "This specially crafted knife was made by 62 year old, Yoshifumi Otsuka, a third generation blacksmith in Chizu Town, Tottori Prefecture. Made from Japanese iron sand, a valuable and sought-after material, and a cherry tree handle. Only a limited number of professionals nationwide are capable of this type of hand forging. This knife is perfect for cheeses, spreading jams and slicing meats.",
+        price: 31000,
+        gallery: [
+          {
+            img: "../assets/imgs/Universal-knife-Middle-cherry1_960x.jpeg",
+            alt: "Knife",
+          },
+          {
+            img: "../assets/imgs/Universal-knife-Middle-cherry3_960x.jpeg",
+            alt: "Knife",
+          },
+          {
+            img: "../assets/imgs/kniveslandscape_2560x.jpeg",
+            alt: "Knife",
+          },
+        ],
+        material: "wood",
+        tags: ["wood", "knife"],
+        hasCrossProduct: false,
+      },
+      {
+        id: 9,
+        name: "Three Tone Tote – Grey",
+        description:
+          "This tote bag was made using a thick cotton canvas in three colour ways. Featuring two handles for easy holding, this bag is perfect for your laptop and daily necessities.",
+        price: 17999,
+        gallery: [
+          {
+            img: "../assets/imgs/Grey_Tote_960x.jpeg",
+            alt: "Bag",
+          },
+          {
+            img: "../assets/imgs/Tote_SIde_Grey_960x.jpeg",
+            alt: "Bag",
+          },
+        ],
+        material: "texture",
+        tags: ["bag"],
+        hasCrossProduct: false,
+      },
+      {
+        id: 10,
+        name: "Worktones x Provider Store Tote",
+        description:
+          "For Everyday Happiness. We've collaborated with our friends at Worktones to create a nifty 'don't leave home without me' kind of bag.",
+        price: 8000,
+        gallery: [
+          {
+            img: "../assets/imgs/20200915_WORKTONES2035_960x.jpeg",
+            alt: "Bag",
+          },
+        ],
+        material: "texture",
+        tags: ["bag"],
         hasCrossProduct: false,
       },
     ],
@@ -159,12 +243,16 @@ export const productsSlice = createSlice({
         tags: ["juiceLover"],
       },
       {
-        img: "../assets/imgs/products1.jpeg",
+        img: "../assets/imgs/filter.jpeg",
         tags: ["ceramic", "brown", "minimal"],
       },
       {
-        img: "../assets/imgs/matcha-and-juicer.jpeg",
-        tags: ["juiceLover"],
+        img: "../assets/imgs/filter2.jpeg",
+        tags: ["bag"],
+      },
+      {
+        img: "../assets/imgs/knife.jpeg",
+        tags: ["wood", "knife"],
       },
     ],
   },

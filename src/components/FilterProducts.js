@@ -20,9 +20,19 @@ const SFilterProducts = styled.div`
   .card {
     width: 90vw;
     max-width: 500px;
+
     img {
+      height: 600px;
       width: 90vw;
       max-width: 500px;
+      object-fit: cover;
+    }
+  }
+  @media (max-width: 768px) {
+    .card {
+      img {
+        height: 450px;
+      }
     }
   }
 `;

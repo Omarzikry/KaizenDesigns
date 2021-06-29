@@ -59,7 +59,14 @@ const Products = () => {
   }, []);
 
   useEffect(() => {
-    const tagsFiltersArray = history.location.search.split("=").slice(1);
+    if (!history.location.search) {
+      return;
+    }
+    const tagsFiltersArray = history.location.search
+      .split("=")
+      .slice(1)[0]
+      .split("-");
+    console.log(tagsFiltersArray);
     let filteredArray = products.map((product) => {
       let inTags;
       // eslint-disable-next-line array-callback-return
@@ -84,7 +91,7 @@ const Products = () => {
       <SProductsGrid>
         {!!filteredProducts?.length &&
           filteredProducts.map((product) => (
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/product/${product.id}`} key={product.id}>
               <SProductCard>
                 <img src={product.gallery[0].img} alt={product.name} />
                 <h3>{product.name}</h3>
@@ -94,7 +101,7 @@ const Products = () => {
           ))}
         {!filteredProducts?.length &&
           products.map((product) => (
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/product/${product.id}`} key={product.id}>
               <SProductCard>
                 <img src={product.gallery[0].img} alt={product.name} />
                 <h3>{product.name}</h3>
