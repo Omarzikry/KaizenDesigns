@@ -9,12 +9,18 @@ const SChooseCategory = styled.div`
   margin: 0 auto;
   h1 {
     text-align: center;
+    padding: 0.5rem;
+    padding-bottom: 5rem;
   }
 `;
 
 const SSelectGrid = styled.div`
   display: flex;
   justify-content: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const SSelect = styled.div`
@@ -35,16 +41,23 @@ const SSelect = styled.div`
       filter: saturate(2) drop-shadow(0 0 0.1rem #5222d0);
     }
   }
+  @media (max-width: 768px) {
+    img {
+      max-width: 60%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
 `;
 const ChooseCategory = () => {
   const history = useHistory();
 
   return (
     <SChooseCategory>
-      <h1>Would you like personalized experience? 😉</h1>
+      <h1>Would you like personalized experience?</h1>
       <SSelectGrid>
         <SSelect onClick={() => history.push("/products")}>
-          <h2>I can choose myself 🤓</h2>
+          <h2>I can choose myself</h2>
           <img src={canChooseImg} alt="personalize your ceramic" />
         </SSelect>
         <SSelect onClick={() => history.push("/personalize")}>
